@@ -1,0 +1,22 @@
+{
+  "uwsgi": {
+    "socket": "./config/unix_socks/main.sock",
+    "processes": 4,
+    "threads": 4,
+    "plugins": "python3",
+    "master": true,
+    "module": "init",
+    "callable": "app",
+    "memory-report": true
+  },
+  "control": {
+    "socket": "./config/unix_socks/control.sock",
+    "processes": 1,
+    "threads": 4,
+    "plugins": "python3",
+    "master": true,
+    "module": "control_server",
+    "callable": "app",
+    "memory-report": true
+  }
+}
